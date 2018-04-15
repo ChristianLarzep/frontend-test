@@ -1,0 +1,291 @@
+[
+{
+  "id": 1,
+  "email": "christian.dm@live.com",
+  "password": "scampillo",
+  "mailbox":[
+    {
+    "id": 1,
+    "name": "Inbox",
+    "emails": [
+          {
+            "id": 1,
+            "from": "christian.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo primer email",
+            "isReaded":false,
+            "date":"10/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+
+          },
+          {
+            "id": 2,
+            "from": "christiwefe@live.com",
+            "to": "pistia@gmail.com",
+            "subject": "Que onda perro",
+            "body": "Cuerpo segundo email",
+            "isReaded":true,
+            "date":"11/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          }
+        ]
+  },
+  {
+    "id": 2,
+    "name": "Spam",
+    "emails": [
+          {
+            "id": 1,
+            "from": "basura.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo primer spam",
+            "isReaded":false,
+            "date":"12/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          },
+          {
+            "id": 2,
+            "from": "basura2.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo segundo spam",
+            "isReaded":false,
+            "date":"13/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+         },
+          {
+            "id": 3,
+            "from": "basura3.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo tercer spam",
+            "isReaded":false,
+            "date":"14/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Sended",
+        "emails": [
+              {
+                "id": 1,
+                "from": "christian.dm@live.com",
+                "to": "pistianlara@gmail.com",
+                "subject": "Que onda",
+                "body": "Cuerpo primer enviado",
+                "isReaded":true,
+                "date":"15/17/2016",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Teal",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+              },
+              {
+                "id": 2,
+                "from": "christian.dm@live.com",
+                "to": "pistianlara@gmail.com",
+                "subject": "Que onda",
+                "body": "Cuerpo segundo enviado",
+                "isReaded":true,
+                "date":"16/17/2016",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Teal",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+             }
+            ]
+          }
+  ]
+},
+{
+  "id": 2,
+  "email": "christian.dm2@hotmail.com",
+  "password": "seriacura",
+  "mailbox":[
+    {
+    "id": 1,
+    "name": "Inbox",
+    "emails": [
+          {
+            "id": 1,
+            "from": "christian.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo primer email",
+            "isReaded":false,
+            "date":"11/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          },
+          {
+            "id": 2,
+            "from": "christiwefe@live.com",
+            "to": "pistia@gmail.com",
+            "subject": "Que onda perro",
+            "body": "Cuerpo segundo email",
+            "isReaded":false,
+            "date":"22/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          }
+        ]
+  },
+  {
+    "id": 2,
+    "name": "Spam",
+    "emails": [
+          {
+            "id": 1,
+            "from": "basura.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo primer spam",
+            "isReaded":false,
+            "date":"04/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          },
+          {
+            "id": 2,
+            "from": "basura2.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo segundo spam",
+            "isReaded":false,
+            "date":"03/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+         },
+          {
+            "id": 3,
+            "from": "basura3.dm@live.com",
+            "to": "pistianlara@gmail.com",
+            "subject": "Que onda",
+            "body": "Cuerpo tercer spam",
+            "isReaded":false,
+            "date":"28/17/2016",
+            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+            "tag":"Teal",
+            "attachements":[
+                {
+                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                  "name":"sodales_scelerisque_mauris.jpeg"
+                }
+                ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Sended",
+        "emails": [
+              {
+                "id": 1,
+                "from": "christian.dm@live.com",
+                "to": "pistianlara@gmail.com",
+                "subject": "Que onda",
+                "body": "Cuerpo primer enviado",
+                "isReaded":true,
+                "date":"22/17/2016",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Teal",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+              },
+              {
+                "id": 2,
+                "from": "christian.dm@live.com",
+                "to": "pistianlara@gmail.com",
+                "subject": "Que onda",
+                "body": "Cuerpo segundo enviado",
+                "isReaded":true,
+                "date":"18/17/2016",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Teal",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+             }
+            ]
+          }
+  ]
+ }
+]
