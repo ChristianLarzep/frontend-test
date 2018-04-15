@@ -41,11 +41,14 @@ class EmailListItems extends React.Component{
     if (this.props.isReaded === false){
       visto = "noReaded";
     }
+    var date = this.props.date.toString();
+    date =date.substring(4, 10);
     return(
         <tr onClick = {this.props.onclick.bind(null)}>
           <td><div className={visto}></div></td>
+          <td>{date}</td>
           <td>{this.props.subject}</td>
-          <td>{this.props.from}<i class="far fa-user"></i></td>
+          <td>{this.props.from}<i className="far fa-user"></i></td>
           <td>{this.props.to}</td>
           <td>{body}</td>
         </tr>
@@ -59,6 +62,7 @@ class EmailList extends React.Component{
        return(
          <EmailListItems key={content.id}
                   isReaded = {content.isReaded}
+                  date = {content.date}
                   from={content.from}
                   to={content.to}
                   subject={content.subject}
@@ -72,6 +76,7 @@ class EmailList extends React.Component{
         <thead>
          <tr>
            <th>State</th>
+           <th>date</th>
            <th>Subject</th>
            <th>From</th>
            <th>To</th>
@@ -140,16 +145,18 @@ class MailBoxList extends React.Component{
        }
 
        return(
-         <li className="list-group-item" key={content.id} onClick={()=>this.props.onClick(content.id)}>
-           <span className="badge">{content.emails.length}</span><i className={icon}></i>
+         <li  key={content.id} onClick={()=>this.props.onClick(content.id)}>
+           <i className={icon}></i>
            {content.name}
          </li>
        )
     }.bind(this));
     return(
-          <ul className="mailboxes list-group">
+      <div className="mailboxlist">
+          <ul >
              {theemails}
           </ul>
+      </div>
     );
   }
 }
@@ -217,8 +224,8 @@ emailSended(val){ //Para que al enviar el correo squite el formulario
 
     return(
       <div className="row" >
-        <div className="col-md-2">
-           <MailBoxList allemails={this.props.emails} onClick = {(id)=> this.onSelected(id)}/>
+        <div >
+           <MailBoxList  allemails={this.props.emails} onClick = {(id)=> this.onSelected(id)}/>
            <button className="col-md-8 buttonRedactar" onClick = {() => this.onSending()}>Write</button>
            <button className="col-md-8 buttonSalir" onClick = {()=> this.props.logOut()} >Logout</button>
         </div>

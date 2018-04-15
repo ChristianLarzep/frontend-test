@@ -59,12 +59,13 @@ class Main extends React.Component{
                  dom:  <App  emails={data[i].mailbox} logOut={()=>this.logOut()} onSendEmail = {(val)=> this.props.sendEmail(val, this.props.response.data, the_id)} onReadEmail={(mailboxId, emailId)=>this.props.changeEmailState(this.props.response.data,the_id, mailboxId, emailId)}/>,//Cambiamos a App y pasamos los emails de el usuario
                  message: ""
                });
-              break;
 
                var theData = this.props.response.data;
                var theEmail = this.props.response.data[the_id].email;
                var sendAuth = this.props.sendEmailAutomatically;
                setInterval(function(){  sendAuth(theData, theEmail, the_id);  }, 90000);
+
+              break;
            }else{
                 this.setState({
                   message: "Email o contraseña incorrectos"

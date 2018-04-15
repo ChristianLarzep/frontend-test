@@ -181,5 +181,32 @@ textarea {
   height: 7px;
   border-radius: 5px;
   background: #4990E2;
-
 }
+
+/*mailboxlist*/
+.mailboxlist{
+  width: 320px;
+   height: 45px;
+   background: #F9F9F9;
+}
+
+ul {
+    list-style-type: none;
+    padding: 15px;
+    overflow: hidden;
+}
+
+li {
+    margin-left: 15px;
+    float: right;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+li:hover{
+  color:#4990E2;
+}
+
+
+/* https://fontawesome.com/icons/microchip?style=solid */
+/**/
