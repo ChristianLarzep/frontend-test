@@ -1,4 +1,4 @@
-var dataMock = require('../containers/data.json');
+var dataMock = require('../data/data.json');
 
 const initialState = {
   data: dataMock,
@@ -13,7 +13,6 @@ const dataReducer = (state = initialState, action) => {
               data: state.data
             };
     break;
-
 
      case "LOGIN":
            var the_id = '';
@@ -35,18 +34,19 @@ const dataReducer = (state = initialState, action) => {
           var copy = action.data;
           var d = new Date();
           var date = d.toString();
-          date =date.substring(0, 25);
+          date =date.substring(0, 22);
 
           for(var i = 0; i < action.data.length; i++){
              if(action.data[i].email === action.values.to){ //Si se encuantra un email igual al to
                  //Actualizar emails RECIBIDOS del la cuata a la que se envia, y asignarle el siguiente id solo contando los que ya tiene en emails recibidos
                  var newObject = {
-                       id: action.data[i].mailbox[0].emails.length+1,
+                       id: action.data[i].mailbox[2].emails.length+1,
                        from: action.data[action.id].email,
                        to: action.values.to,
                        subject: action.values.subject,
                        body: action.values.body,
                        isReaded: false,
+                       deleted:false,
                        date:date,
                        avatar:"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
                        tag: action.data[action.id].tag,
@@ -56,20 +56,21 @@ const dataReducer = (state = initialState, action) => {
                            name:"sodales_scelerisque_mauris.jpeg"
                          }
                        ]};
-                 newdataSended = action.data[i].mailbox[0].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
-                 copy[i].mailbox[0].emails = newdataSended;
-               i = action.data.length;
+                 newdataSended = action.data[i].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
+                 copy[i].mailbox[2].emails = newdataSended;
+               break;
              }
           }
 
           //Actualizar emails ENVIADOS y asignarle el siguiente id solo contando los que ya tiene en emails enviados
           var newSecondObject = {
-            id: action.data[action.id].mailbox[2].emails.length+1,
+            id: action.data[action.id].mailbox[1].emails.length+1,
             from: action.data[action.id].email,
             to: action.values.to,
             subject: action.values.subject,
             body: action.values.body,
             isReaded: true,
+            deleted:false,
             date:date,
             avatar:"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
             tag:action.data[action.id].tag,
@@ -80,8 +81,8 @@ const dataReducer = (state = initialState, action) => {
               }
             ]
           };
-          var newdataUser = action.data[action.id].mailbox[2].emails.concat(newSecondObject);  //Juntar los emails ENVIADOS
-          copy[action.id].mailbox[2].emails = newdataUser; //poner todos o email en una copia de los datos enENVIADOS
+          var newdataUser = action.data[action.id].mailbox[1].emails.concat(newSecondObject);  //Juntar los emails ENVIADOS
+          copy[action.id].mailbox[1].emails = newdataUser; //poner todos o email en una copia de los datos enENVIADOS
 
           state = {
             ...state,
@@ -91,28 +92,29 @@ const dataReducer = (state = initialState, action) => {
     case "SEND_EMAIL_AUT":
             var d = new Date();
             var date = d.toString();
-            date =date.substring(0, 25);
+            date =date.substring(0, 22);
             var newdataSended = '';
             var copy = action.data;
             var newObject = {
-                  id:action.data[action.id].mailbox[0].emails.length+1 ,
-                  from:"pistianlara@gmail.com" ,
-                  to: action.email,
-                  subject:"Prueba" ,
-                  body:"Email automatico",
-                  isReaded: false,
-                  date:date,
-                  avatar:"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-                  tag:"Pistian",
-                  attachements:[
-                    {
-                      file:"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                      name:"sodales_scelerisque_mauris.jpeg"
-                    }
-                  ]
+                  "id":action.data[action.id].mailbox[2].emails.length+1 ,
+                  "from": "pistianlara@gmail.com",
+                  "to": "pistia@gmail.com",
+                  "subject": "Que onda perro",
+                  "body": "Email automatico",
+                  "isReaded":false,
+                  "deleted":false,
+                  "date":date,
+                  "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                  "tag":"Teal",
+                  "attachements":[
+                      {
+                        "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                        "name":"sodales_scelerisque_mauris.jpeg"
+                      }
+                      ]
                  };
-            newdataSended = action.data[action.id].mailbox[0].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
-            copy[action.id].mailbox[0].emails = newdataSended;
+            newdataSended = action.data[action.id].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
+            copy[action.id].mailbox[2].emails = newdataSended;
 
             state = {
               ...state,
@@ -129,12 +131,97 @@ const dataReducer = (state = initialState, action) => {
                   }
           break;
 
+          case "MOVE_TO_SPAM":
+                  var copy = action.data;
+                  newObject = {
+                        "id": action.data[action.user_id].mailbox[0].emails.length + 1 ,
+                        "from":action.email.from ,
+                        "to": action.email.to,
+                        "subject": action.email.subject,
+                        "body": action.email.body,
+                        "isReaded":true,
+                        "deleted":false,
+                        "date":action.email.date,
+                        "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                        "tag":action.email.tag,
+                        "attachements":[
+                            {
+                              "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                              "name":"sodales_scelerisque_mauris.jpeg"
+                            }
+                            ]
+                       };
+
+                  for(var i = 0; i<action.data[action.user_id].mailbox[action.mailbox-1].emails.length; i++){
+                    if(action.email.id === action.data[action.user_id].mailbox[action.mailbox-1].emails[i].id){
+                          copy[action.user_id].mailbox[action.mailbox-1].emails[i].deleted = true;
+                          copy[action.user_id].mailbox[0].emails =  action.data[action.user_id].mailbox[0].emails.concat(newObject);
+
+                      break;
+                    }
+                  }
+
+                  state = {
+                    ...state,
+                    data: copy
+                  }
+          break;
+
+          case "MOVE_TO_TRASH":
+                  var copy = action.data;
+                  newObject = {
+                        "id": action.data[action.user_id].mailbox[1].emails.length + 1 ,
+                        "from":action.email.from ,
+                        "to": action.email.to,
+                        "subject": action.email.subject,
+                        "body": action.email.body,
+                        "isReaded":true,
+                        "deleted":false,
+                        "date":action.email.date,
+                        "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                        "tag":action.email.tag,
+                        "attachements":[
+                            {
+                              "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                              "name":"sodales_scelerisque_mauris.jpeg"
+                            }
+                            ]
+                       };
+
+                  for(var i = 0; i<action.data[action.user_id].mailbox[action.mailbox-1].emails.length; i++){
+                    if(action.email.id === action.data[action.user_id].mailbox[action.mailbox-1].emails[i].id){
+                          copy[action.user_id].mailbox[action.mailbox-1].emails[i].deleted = true;
+                          copy[action.user_id].mailbox[1].emails =  action.data[action.user_id].mailbox[1].emails.concat(newObject);
+
+                      break;
+                    }
+                  }
+
+                  state = {
+                    ...state,
+                    data: copy
+                  }
+          break;
+
+          case "MARK_AS_UNREAD":
+                 var copy = action.data;
+
+                 copy[action.user_id].mailbox[action.mailbox-1].emails[action.email.id-1].isReaded = false;
+
+                  state = {
+                    ...state,
+                    data: copy
+                  }
+          break;
   }
   return state;
 };
  export default dataReducer;
 
 
-/*var d = new Date();
-var date = d.toString();
-date =date.substring(0, 25);*/
+/*
+
+action.data[i].mailbox[2].emails[action.data[i].mailbox[2].emails.length-1].id+1,
+action.data[action.id].mailbox[1].emails[action.data[action.id].mailbox[1].emails.length-1].id+1,
+action.data[action.id].mailbox[2].emails[action.data[action.id].mailbox[2].emails.length-1].id+1,
+*/

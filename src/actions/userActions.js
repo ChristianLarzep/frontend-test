@@ -34,3 +34,33 @@ export function changeEmailState(dataMock,id_user, mailbox_id, email_id){
     email_id: email_id
   };
 }
+
+export function moveToSpam(dataMock,mailbox_id, email, user_id){
+  return{
+    type: "MOVE_TO_SPAM",
+    data: dataMock,
+    mailbox: mailbox_id,
+    email: email,
+    user_id: user_id
+  };
+}
+
+export function moveToTrash(dataMock,mailbox_id, email, user_id){
+  return{
+    type: "MOVE_TO_TRASH",
+    data: dataMock,
+    mailbox: mailbox_id,
+    email: email,
+    user_id: user_id
+  };
+}
+
+export function markAsUnread(dataMock,mailbox_id, email, user_id){
+  return{
+    type: "MARK_AS_UNREAD",
+    data: dataMock,
+    mailbox: mailbox_id,
+    email: email,
+    user_id: user_id
+  };
+}

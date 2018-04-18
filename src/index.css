@@ -1,5 +1,12 @@
+html, body {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
 /*------------Form Login--------------*/
-input[type=text] {
+.input_email {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -11,7 +18,7 @@ input[type=text] {
     font-family: "Trebuchet MS";
     font-size: 18px;
 }
-input[type=password] {
+.input_password {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -23,10 +30,10 @@ input[type=password] {
     font-size: 18px;
 }
 
-input[type=text]:focus {
+.input_email:focus {
     border: 3px solid #555;
 }
-input[type=password]:focus {
+.input_password:focus {
     border: 3px solid #555;
 }
 .formLogin{
@@ -36,6 +43,8 @@ input[type=password]:focus {
   width: 300px;
   margin-top: 90px;
   margin-left: 500px;
+  font-family: "Trebuchet MS";
+  font-weight: bold;
 }
 
 .buttonLogin{
@@ -57,56 +66,29 @@ input[type=password]:focus {
     background-color: 	#6682B8;
 }
 
-.list-group-item:hover{
-  background: #555;
-  color: white;
-  cursor: pointer;
-}
-
-/*-----------Tabla de listado de emails*/
-.emailTable {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.emailTable td, .emailTable th { /*color lineas*/
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-
-
-.emailTable tr:hover {cursor: pointer; background-color: #ddd;}/*Cuando el cursor pasa por encima*/
-.emailTable tr:nth-child(even){background-color: #f2f2f2;}/*se turna el color*/
-
-.emailTable th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-}
-
 /*---------------Form sendEmail*/
-
+.formsSendEmail{
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 14px;
+}
 textarea {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     width: 100%;
-    height: 150px;
+    height: 350px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
+    background-color: white;
+    font-size: 14px;
     resize: none;
 }
 
 .buttonSendEmail{
   margin-top: 10px;
-  width: 15%;
-  height: 36px;
+  width: 10%;
+  height: 30px;
   background-color: #4682B4;
   color: white;
   border-radius: 4px;
@@ -118,29 +100,202 @@ textarea {
   background: #6682B4;
 }
 
-/*---------------Body show email-------*/
-.tag{
-  float: left;
-  margin-right: 3px;
+.sendTo{
+  width: 100%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-family: "Trebuchet MS";
+  font-size: 14px;
 }
-.from{
+
+.sendSubject{
+  width: 100%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  font-size: 14px;
+}
+
+.sendTo:focus {
+    border: 3px solid #555;
+}
+.sendSubject:focus {
+    border: 3px solid #555;
+}
+/*-------emailBox-----------*/
+.mainFrame{
+  padding: 0px;
+  width: 1365px;
+  height: 662px;
+}
+.rightDivision{
+    float: right;
+    text-align: center;
+    width: 964px;
+    max-width: 1045px;
+    height: 91%;
+    background: #F6F6F7;
+    padding: 40px;
+    padding-top: 20px;
+    position: relative;
+
+}
+
+.leftDivision{
+    float: left;
+    text-align: center;
+    width: 320px;
+    height: 92%;
+    border-right: 1px solid #B5B5B5;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*--------mailBoxList---- */
+.options{
+  border-bottom: 1px solid #B5B5B5;
+  width: 295px;
+  margin-top: 0px;
+  margin-left: -6px;
+  height: 15px;
+  list-style-type: none;
+  padding: 15px;
+}
+
+.options li{
+  float:right;
+    font-size: 12px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-family: "Helvetica";
+}
+
+.optionSelected{
   color: #4990E2;
 }
 
-.date{
-    float: right;
-    margin-right: 10px;
+
+/*---------emailList----------*/
+.itemList{
+  padding-top: 15px;
+  padding-left: 15px;
+  height: 80px;
+  border-bottom: 1px solid #B5B5B5;
+  width: 320px;
+  margin-left: -16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: "Helvetica";
+}
+
+.itemListClicked{
+  padding-top: 15px;
+  padding-left: 15px;
+  height: 80px;
+  border-bottom: 1px solid #B5B5B5;
+  width: 320px;
+  margin-left: -16px;
+  cursor: pointer;
+  font-size: 12px;
+  background: #F6F6F7;
+  border-right: 1px solid #B5B5B5;
+  border-left: 4px solid #4990E2;
+  font-family: "Helvetica";
+}
+
+
+.list{
+  margin-top: -30px;
+  padding: 15px;
+}
+/*---------------email-------*/
+
+.email{
+  width: 88%;
+  height: 530px;
+  background: white;
+  border: 1px solid #B5B5B5;
+  border-radius: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 40px;
+  font-family: "Helvetica";
+
+}
+
+.subjectContainer{
+  height: 15px;
+  margin-bottom:20px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: "Helvetica";
+}
+.emailSubject{
+  float: left;
+  color: #333333;
+}
+
+.iconsAction{
+  float: right;
+  width: 130px;
+  margin-right: 20px;
+}
+
+.circle, .trash, .microchip{
+  float: left;
+  margin-left: 20px;
+  color: #8B8B8B;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.circle:hover, .trash:hover, .microchip:hover{
+  color: #333333;
+}
+
+.sender{
+  float: left;
+  font-size: 16px;
+  color: #333333;
+}
+.from{
+  float: left;
+  color: #4990E2;
+  font-size: 16px;
+  margin-left: 3px;
+}
+
+.emailDate{
+  float: right;
+  font-size: 12px;
+  color: #9B9B9B;
+}
+
+.emailBody{
+  width: 100%;
+  padding-top: 20px;
+  float: left;
 }
 
 .body{
-  margin-top: 27px;
-  height: 200px;
+  float: left;
+  font-size: 14px;
 }
 
-/*Boton Redactar*/
+
+/*---------------Boton Redactar*/
 .buttonRedactar{
-  margin-bottom: 15px;
-  margin-left: 27px;
+  margin-top: 10px;
+  margin-left: 75px;
   height: 36px;
   background-color: #4DD679;
   border-radius: 4px;
@@ -156,7 +311,8 @@ textarea {
 }
 
 .buttonSalir{
-  margin-left: 27px;
+  margin-top: 10px;
+  margin-left: 35px;
   height: 36px;
   background-color: #46574C;
   border-radius: 4px;
@@ -174,39 +330,133 @@ textarea {
 
 }
 
-/*Vusto*/
+.mailList{
+  background: grey;
+  height: 100%;
+  width: 320px;
+}
+
+
+/*-----------emailListItems----------*/
+.top{
+  height: 20px;
+  width: 280px;
+}
+
+.bottom{
+  height: 20px;
+}
+
+.middle{
+  height: 20px;
+}
+
+.iconDiv{
+  width: 100px;
+  float: left;
+  height: 18px;
+}
+
+.tagDiv{
+  width: 100px;
+  float: left;
+  height: 18px;
+}
+
+.dateDiv{
+  width: 80px;
+  float: right;
+  height: 18px;
+}
+
+.icon{
+  height: 12px;
+  margin-right: 65px;
+}
+
+.tagDiv p{
+  float: left;
+  font-family: "Helvetica";
+  font-weight: bold;
+  margin-left: -65px;
+  color: #333333;
+  margin-top: 0px;
+}
+
+.dateDiv p{
+  font-size: 10px;
+  margin-right: -40px;
+  color: #B5B5B5;
+  margin-top: -2px;
+
+
+}
+
 
 .noReaded{
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
+  margin-left: -5px;
   border-radius: 5px;
   background: #4990E2;
 }
 
-/*mailboxlist*/
-.mailboxlist{
+.Readed{
+  width: 9px;
+  height: 9px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background: white;
+}
+
+.ReadedAndClicked{
+  width: 9px;
+  height: 9px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background: #F6F6F9;
+}
+.subjectItem{
+  float:left;
+  margin-left: 12px;
+  margin-top: -10px;
+  color: #333333;
+}
+
+
+.bodyDiv{
+  color: #9B9B9B;
+  float: left;
+  margin-left: 13px;
+  margin-top: -4px;
+  height: 18px;
+}
+
+.empty{
+  margin-top: 180px;
+  margin-left: -100px;
+  font-size: 200px;
+  color:#DCD4D4;
+  position: absolute;
+}
+
+.navi,
+.infoi {
+  width: 970px;
+  position: absolute;
+
+}
+.infoi {
+  z-index: 10;
+}
+
+.buttons{
+  height: 52px;
   width: 320px;
-   height: 45px;
-   background: #F9F9F9;
+  background: #ccc;
+  margin-top: -52px;
+  border-right:1px solid #ccc;
 }
-
-ul {
-    list-style-type: none;
-    padding: 15px;
-    overflow: hidden;
-}
-
-li {
-    margin-left: 15px;
-    float: right;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-li:hover{
-  color:#4990E2;
-}
-
 
 /* https://fontawesome.com/icons/microchip?style=solid */
 /**/

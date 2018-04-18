@@ -1,243 +1,115 @@
+
 import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { combineForms } from 'react-redux-form';
+
+//components
 import { Sendemail } from './sendEmail.js';
-
-class Email extends React.Component{
-  render(){
-    var from = "<"+this.props.From+">";
-    return(
-      <div className="email">
-       <div className="meta dl-horizontal panel panel-default">
-          <dl>
-           <dt>From</dt>
-           <dd><div className="tag">{this.props.Tag}</div><div className="from">{from}</div><div className="date">{this.props.date}</div></dd>
-
-           <dt>To</dt>
-           <dd>{this.props.To}</dd>
-
-           <dt>Subject</dt>
-           <dd>{this.props.Subject}</dd>
-
-          </dl>
-       </div>
-       <div className="body panel panel-default" dangerouslySetInnerHTML={{__html: this.props.Body}}></div>
-     </div>
-    );
-  }
-}
-
-
-
-
-class EmailListItems extends React.Component{
-  render(){
-    var body = this.props.body;
-    var visto = "Readed";
-    if (this.props.body.length > 10) {
-            body = this.props.body.substring(0, 10) + "...";
-    }
-    if (this.props.isReaded === false){
-      visto = "noReaded";
-    }
-    var date = this.props.date.toString();
-    date =date.substring(4, 10);
-    return(
-        <tr onClick = {this.props.onclick.bind(null)}>
-          <td><div className={visto}></div></td>
-          <td>{date}</td>
-          <td>{this.props.subject}</td>
-          <td>{this.props.from}<i className="far fa-user"></i></td>
-          <td>{this.props.to}</td>
-          <td>{body}</td>
-        </tr>
-    );
-  }
-}
-
-class EmailList extends React.Component{
-  render(){
-    var emails = this.props.theemails.map(function(content){
-       return(
-         <EmailListItems key={content.id}
-                  isReaded = {content.isReaded}
-                  date = {content.date}
-                  from={content.from}
-                  to={content.to}
-                  subject={content.subject}
-                  body={content.body}
-                  onclick = {()=> this.props.onClick(content.id)}/>
-       );
-    }.bind(this))
-
-    return(
-      <table className="emailTable">
-        <thead>
-         <tr>
-           <th>State</th>
-           <th>date</th>
-           <th>Subject</th>
-           <th>From</th>
-           <th>To</th>
-           <th>Body</th>
-         </tr>
-        </thead>
-        <tbody>
-          {emails}
-        </tbody>
-      </table>
-    );
-  }
-}
-
-
-class MailBox extends React.Component{
-
-  constructor(props){
-    super(props);
-    this.state = {
-      email_id: null
-    }
-  }
-  onSelected(id){
-    this.setState({
-      email_id: id
-    })
-    this.props.onReadEmail(id);
-
-  }
-  render(){
-        var email_id = this.state.email_id;
-        var email = '';
-        if(email_id){
-             var the_email =  this.props.emails.filter(function(content){
-                  return content.id === email_id;
-             })[0];
-
-             email = <Email Tag={the_email.tag} From={the_email.from} date={the_email.date} To={the_email.to} Subject={the_email.subject} Body={the_email.body}/>
-
-        }else{
-            email = <EmailList theemails={this.props.emails} onClick={(id)=>this.onSelected(id)}/>
-        }
-
-    return(
-      <div>
-
-        <div className="email-viewer">
-          {email}
-        </div>
-     </div>
-    );
-  }
-}
-
-class MailBoxList extends React.Component{
-  render(){
-    var theemails = this.props.allemails.map(function(content){
-      var icon = '';
-       if(content.name === "Inbox"){
-         icon = 'fas fa-inbox';
-       }else if (content.name === "Spam") {
-         icon = 'fas fa-microchip';
-       }else{
-         icon = ' fas fa-trash-alt';
-       }
-
-       return(
-         <li  key={content.id} onClick={()=>this.props.onClick(content.id)}>
-           <i className={icon}></i>
-           {content.name}
-         </li>
-       )
-    }.bind(this));
-    return(
-      <div className="mailboxlist">
-          <ul >
-             {theemails}
-          </ul>
-      </div>
-    );
-  }
-}
+import { Email } from './email.js';
+import { EmailList } from './emailList.js';
+import { MailBoxList } from './mailboxList.js';
 
 export class App extends React.Component{
-
 
 constructor(props){
   super(props);
   this.state = {
-    mailbox_id: null,
-    option:'',
-    store: createStore(combineForms({email: initialState}))
-
+    mailbox_id: 3,
+    option:0,
+    store: createStore(combineForms({email: initialState})),
+    email_id:null
   }
+
   const initialState = {
     to:'',
     subject: '',
     body: ''
   }
-
 }
-onSelected(id){
-  this.setState({
-    mailbox_id: id,
-    option: 1
-  })
-}
-
-onSending(){
+  onSelected(id){
     this.setState({
-      option: 2
+      mailbox_id: id,
+      option: 0,
+      email_id:null
     })
-}
+  }
 
-emailSended(val){ //Para que al enviar el correo squite el formulario
-  this.props.onSendEmail(val);
-  this.setState({
-    option: 0
-  });
-}
+  onSending(){
+      this.setState({
+        option: 1
+      })
+  }
 
+  emailSended(val){ //Para que al enviar el correo squite el formulario
+    this.props.onSendEmail(val);
+    this.setState({
+      option: 0
+    });
+  }
+
+  onEmailSelected(id){
+    this.setState({
+      email_id: id,
+      option: 2
+    });
+    this.props.onReadEmail(this.state.mailbox_id,id);
+  }
 
   render(){
 
     var mailbox_id = this.state.mailbox_id;
+    var email_id = this.state.email_id;
     var option = this.state.option;
     var selected = '';
 
-    if(option === 1){
-     var thisemails = this.props.emails.filter(function(content){
+    var thisemails = this.props.emails.filter(function(content){
        return content.id === mailbox_id;
-     })[0];
+       })[0];
+    var emailsList = <EmailList
+                         theemails={thisemails.emails}
+                         onClick={(id)=>this.onEmailSelected(id)}
+                      />
 
-          selected = <MailBox className="mailbox" key={thisemails.id} emails ={thisemails.emails} onReadEmail={(id)=>this.props.onReadEmail(mailbox_id,id)}/>
+    if(this.state.option === 2){
+        var the_email =  thisemails.emails.filter(function(content){
+               return content.id === email_id;
+        })[0];
 
-    }else if(option === 2){
-          selected = <Provider store={this.state.store}>
-                       <Sendemail onClick={(val)=>this.emailSended(val)} />
-                     </Provider>
+         selected = <Email
+                         selectedAs={(email, option)=>this.props.selectedAs(email, this.state.mailbox_id, option)}
+                         email={the_email} Tag={the_email.tag}
+                         From={the_email.from}
+                         date={the_email.date}
+                         To={the_email.to}
+                         Subject={the_email.subject}
+                         Body={the_email.body}
+                         />
+    }//if
+    else if(this.state.option === 1){
+      selected = <Provider store={this.state.store}>
+                   <Sendemail onClick={(val)=>this.emailSended(val)} />
+                 </Provider>
     }
-    else{
-          selected = <h1>Bienvenido</h1>
-    }
-
     return(
-      <div className="row" >
-        <div >
-           <MailBoxList  allemails={this.props.emails} onClick = {(id)=> this.onSelected(id)}/>
-           <button className="col-md-8 buttonRedactar" onClick = {() => this.onSending()}>Write</button>
-           <button className="col-md-8 buttonSalir" onClick = {()=> this.props.logOut()} >Logout</button>
-        </div>
-        <div className="col-md-9">
-           <div className="panel panel-default">
-             <div className="panel-body">
-               {selected}
-             </div>
-           </div>
-        </div>
-
+    <div>
+      <div className="mainFrame">
+          <div className="leftDivision">
+             <MailBoxList onClick = {(id)=> this.onSelected(id)}/>
+             {emailsList}
+          </div>
+          <div className="rightDivision">
+                <div ><i className=" navi empty far fa-envelope"></i></div>
+                <div className="infoi">
+                  {selected}
+                </div>
+          </div>
       </div>
+      <div className="buttons">
+      <button className=" buttonRedactar" onClick = {() => this.onSending()}>Write</button>
+       <button className=" buttonSalir" onClick = {()=> this.props.logOut()} >Logout</button>
+      </div>
+    </div>
     );
   }
 }
