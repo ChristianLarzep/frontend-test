@@ -11,7 +11,7 @@ export class Login extends React.Component{
         <Control.text className="input_email" placeholder="Your email" model=".email"/>
         <label>Password</label>
         <Control.password className="input_password" placeholder="Your password" model=".password"/>
-        <button className="buttonLogin">Ingresar</button>
+        <button className="buttonLogin">Sign In</button>
       </Form>
     );
   }

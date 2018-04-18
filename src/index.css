@@ -72,6 +72,11 @@ html, body {
   font-weight: bold;
   font-size: 14px;
 }
+.formsSendEmail label{
+  float:left;
+  margin-left: 20px;
+}
+
 textarea {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     width: 100%;
@@ -289,6 +294,7 @@ textarea {
 .body{
   float: left;
   font-size: 14px;
+  text-align: left;
 }
 
 

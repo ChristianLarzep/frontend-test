@@ -34,7 +34,7 @@ const dataReducer = (state = initialState, action) => {
           var copy = action.data;
           var d = new Date();
           var date = d.toString();
-          date =date.substring(0, 22);
+          date =date.substring(0, 21);
 
           for(var i = 0; i < action.data.length; i++){
              if(action.data[i].email === action.values.to){ //Si se encuantra un email igual al to
@@ -64,7 +64,7 @@ const dataReducer = (state = initialState, action) => {
 
           //Actualizar emails ENVIADOS y asignarle el siguiente id solo contando los que ya tiene en emails enviados
           var newSecondObject = {
-            id: action.data[action.id].mailbox[1].emails.length+1,
+            id: action.data[action.id].mailbox[3].emails.length+1,
             from: action.data[action.id].email,
             to: action.values.to,
             subject: action.values.subject,
@@ -81,8 +81,8 @@ const dataReducer = (state = initialState, action) => {
               }
             ]
           };
-          var newdataUser = action.data[action.id].mailbox[1].emails.concat(newSecondObject);  //Juntar los emails ENVIADOS
-          copy[action.id].mailbox[1].emails = newdataUser; //poner todos o email en una copia de los datos enENVIADOS
+          var newdataUser = action.data[action.id].mailbox[3].emails.concat(newSecondObject);  //Juntar los emails ENVIADOS
+          copy[action.id].mailbox[3].emails = newdataUser; //poner todos o email en una copia de los datos enENVIADOS
 
           state = {
             ...state,
@@ -92,7 +92,7 @@ const dataReducer = (state = initialState, action) => {
     case "SEND_EMAIL_AUT":
             var d = new Date();
             var date = d.toString();
-            date =date.substring(0, 22);
+            date =date.substring(0, 21);
             var newdataSended = '';
             var copy = action.data;
             var newObject = {

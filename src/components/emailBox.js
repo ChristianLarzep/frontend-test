@@ -17,15 +17,9 @@ constructor(props){
   this.state = {
     mailbox_id: 3,
     option:0,
-    store: createStore(combineForms({email: initialState})),
     email_id:null
   }
 
-  const initialState = {
-    to:'',
-    subject: '',
-    body: ''
-  }
 }
   onSelected(id){
     this.setState({
@@ -87,7 +81,14 @@ constructor(props){
                          />
     }//if
     else if(this.state.option === 1){
-      selected = <Provider store={this.state.store}>
+      const initialState = {
+        to:'',
+        subject: '',
+        body: ''
+      }
+      var store = createStore(combineForms({email: initialState}));
+
+      selected = <Provider store={store}>
                    <Sendemail onClick={(val)=>this.emailSended(val)} />
                  </Provider>
     }
@@ -106,7 +107,7 @@ constructor(props){
           </div>
       </div>
       <div className="buttons">
-      <button className=" buttonRedactar" onClick = {() => this.onSending()}>Write</button>
+       <button className=" buttonRedactar" onClick = {() => this.onSending()}>Write</button>
        <button className=" buttonSalir" onClick = {()=> this.props.logOut()} >Logout</button>
       </div>
     </div>

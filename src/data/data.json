@@ -148,7 +148,50 @@
                     ]
               }
             ]
-          }
+      },
+      {
+      "id": 4,
+      "name": "Sended",
+      "emails": [
+              {
+              "id": 1,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que ondahbuunin0in",
+              "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Tealssrhsrh",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+            },
+            {
+              "id": 2,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que onda perro",
+              "body": "Cuerpo segundo email",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Teal",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+            }
+          ]
+      }
+
   ]
  },
  {
@@ -157,132 +200,193 @@
   "password": "seriacura",
   "tag":"Emmanuel Lara",
   "mailbox":[
-    {
-    "id": 1,
-    "name": "Spam",
-    "emails": [
-          {
-            "id": 1,
-            "from": "christian.dm@live.com",
-            "to": "pistianlara@gmail.com",
-            "subject": "Que onda",
-            "body": "Cuerpo primer email",
-            "isReaded":false,
-            "deleted":false,
-            "date":"Sun Apr 15 2018 14:08",
-            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-            "tag":"Teal",
-            "attachements":[
-                {
-                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                  "name":"sodales_scelerisque_mauris.jpeg"
-                }
-                ]
-          },
-          {
-            "id": 2,
-            "from": "christiwefe@live.com",
-            "to": "pistia@gmail.com",
-            "subject": "Que onda perro",
-            "body": "Cuerpo segundo email",
-            "isReaded":false,
-            "deleted":false,
-            "date":"Sun Apr 15 2018 14:08",
-            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-            "tag":"Teal",
-            "attachements":[
-                {
-                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                  "name":"sodales_scelerisque_mauris.jpeg"
-                }
-                ]
-          }
-        ]
-  },
-  {
-    "id": 2,
-    "name": "Trash",
-    "emails": [
-          {
-            "id": 1,
-            "from": "basura.dm@live.com",
-            "to": "pistianlara@gmail.com",
-            "subject": "Que onda",
-            "body": "Cuerpo primer spam",
-            "isReaded":false,
-             "deleted":false,
-            "date":"Sun Apr 15 2018 14:08",
-            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-            "tag":"Teal",
-            "attachements":[
-                {
-                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                  "name":"sodales_scelerisque_mauris.jpeg"
-                }
-                ]
-          },
-          {
-            "id": 2,
-            "from": "basura2.dm@live.com",
-            "to": "pistianlara@gmail.com",
-            "subject": "Que onda",
-            "body": "Cuerpo segundo spam",
-            "isReaded":false,
-            "deleted":false,
-            "date":"Sun Apr 15 2018 14:08",
-            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-            "tag":"Teal",
-            "attachements":[
-                {
-                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                  "name":"sodales_scelerisque_mauris.jpeg"
-                }
-                ]
-         },
-          {
-            "id": 3,
-            "from": "basura3.dm@live.com",
-            "to": "pistianlara@gmail.com",
-            "subject": "Que onda",
-            "body": "Cuerpo tercer spam",
-            "isReaded":false,
-            "deleted":false,
-            "date":"Sun Apr 15 2018 14:08",
-            "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-            "tag":"Teal",
-            "attachements":[
-                {
-                  "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                  "name":"sodales_scelerisque_mauris.jpeg"
-                }
-                ]
-          }
-        ]
-    },
-    {
-      "id": 3,
-      "name": "Inbox",
+      {
+      "id": 1,
+      "name": "Spam",
       "emails": [
-        {
-          "id": 2,
-          "from": "christiwefe@live.com",
-          "to": "pistia@gmail.com",
-          "subject": "Que onda perro",
-          "body": "Cuerpo segundo email",
-          "isReaded":false,
-          "deleted":false,
-          "date":"Sun Apr 15 2018 14:08",
-          "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
-          "tag":"Teal",
-          "attachements":[
               {
-                "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
-                "name":"sodales_scelerisque_mauris.jpeg"
-              }
-              ]
+              "id": 1,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que ondahbuunin0in",
+              "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Tealssrhsrh",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+            },
+            {
+              "id": 2,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que onda perro",
+              "body": "Cuerpo segundo email",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Teal",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
             }
           ]
+      },
+      {
+      "id": 2,
+      "name": "Trash",
+      "emails": [
+              {
+              "id": 1,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que onda perro",
+              "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Teal",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+             },
+             {
+              "id": 2,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que onda perro fber",
+              "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Teal",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+            },
+            {
+              "id": 3,
+              "from": "christiwefe@live.com",
+              "to": "pistia@gmail.com",
+              "subject": "Que hay",
+              "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+              "isReaded":true,
+              "deleted":false,
+              "date":"Sun Apr 15 2018 14:08",
+              "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+              "tag":"Teal",
+              "attachements":[
+                  {
+                    "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                    "name":"sodales_scelerisque_mauris.jpeg"
+                  }
+                  ]
+            }
+           ]
+        },
+        {
+          "id": 3,
+          "name": "Inbox",
+          "emails": [
+                    {
+                    "id": 1,
+                    "from": "christiwefe@live.com",
+                    "to": "pistia@gmail.com",
+                    "subject": "Que onda perro",
+                    "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+                    "isReaded":false,
+                    "deleted":false,
+                    "date":"Sun Apr 15 2018 14:08",
+                    "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                    "tag":"Teal",
+                    "attachements":[
+                        {
+                          "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                          "name":"sodales_scelerisque_mauris.jpeg"
+                        }
+                        ]
+                  },
+                  {
+                  "id": 2,
+                  "from": "christiwefe@live.com",
+                  "to": "pistia@gmail.com",
+                  "subject": "Que onda perro",
+                  "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría ",
+                  "isReaded":false,
+                  "deleted":false,
+                  "date":"Sun Apr 15 2018 14:08",
+                  "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                  "tag":"Teal",
+                  "attachements":[
+                      {
+                        "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                        "name":"sodales_scelerisque_mauris.jpeg"
+                      }
+                      ]
+                }
+              ]
+        },
+        {
+        "id": 4,
+        "name": "Sended",
+        "emails": [
+                {
+                "id": 1,
+                "from": "christiwefe@live.com",
+                "to": "pistia@gmail.com",
+                "subject": "Que ondahbuunin0in",
+                "body": "En el primero, el hedonismo sería una teoría ética de gran amplitud en la que la palabra placer tendría u",
+                "isReaded":true,
+                "deleted":false,
+                "date":"Sun Apr 15 2018 14:08",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Tealssrhsrh",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+              },
+              {
+                "id": 2,
+                "from": "christiwefe@live.com",
+                "to": "pistia@gmail.com",
+                "subject": "Que onda perro",
+                "body": "Cuerpo segundo email",
+                "isReaded":true,
+                "deleted":false,
+                "date":"Sun Apr 15 2018 14:08",
+                "avatar":"https://robohash.org/aliquamautdolore.jpg?size=50x50&set=set1",
+                "tag":"Teal",
+                "attachements":[
+                    {
+                      "file":"http://dummyimage.com/250x250.jpg/dddddd/000000",
+                      "name":"sodales_scelerisque_mauris.jpeg"
+                    }
+                    ]
+              }
+            ]
         }
-  ]
+    ]
+
  }
 ]
