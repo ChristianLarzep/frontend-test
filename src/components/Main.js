@@ -64,7 +64,7 @@ class Main extends React.Component{
       var data = this.props.response.data;
       var the_id = '';
 
-      for(var i = 0; i < data.length ; i++ ){ //Recorreo todos los usuarios y ve si hay un match
+      for(var i = 0; i < data.length ; i++ ){ //Recorre todos los usuarios y ve si hay un match
            if(val.email === data[i].email && val.password === data[i].password){ //Si hay match
                  the_id = i
                  this.setState({

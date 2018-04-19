@@ -16,7 +16,7 @@ const dataReducer = (state = initialState, action) => {
 
      case "LOGIN":
            var the_id = '';
-          for(var i2 = 0; i2 < action.data.length ; i2++ ){ //Recorreo todos los usuarios y ve si hay un match
+          for(var i2 = 0; i2 < action.data.length ; i2++ ){ //Recorre todos los usuarios y ve si hay un match
               if(action.values.email === action.data[i2].email && action.values.password === action.data[i2].password){
                   the_id = i2;
                   i2 = action.data.length;
@@ -37,8 +37,8 @@ const dataReducer = (state = initialState, action) => {
           date =date.substring(0, 21);
 
           for(var i = 0; i < action.data.length; i++){
-             if(action.data[i].email === action.values.to){ //Si se encuantra un email igual al to
-                 //Actualizar emails RECIBIDOS del la cuata a la que se envia, y asignarle el siguiente id solo contando los que ya tiene en emails recibidos
+             if(action.data[i].email === action.values.to){ //Si se encuentra un email igual al to
+                 //Actualizar emails RECIBIDOS del email al que se envia. Asignarle el siguiente id solo contando los que ya tiene en emails recibidos
                  var newObject = {
                        id: action.data[i].mailbox[2].emails.length+1,
                        from: action.data[action.id].email,
@@ -56,7 +56,7 @@ const dataReducer = (state = initialState, action) => {
                            name:"sodales_scelerisque_mauris.jpeg"
                          }
                        ]};
-                 newdataSended = action.data[i].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
+                 newdataSended = action.data[i].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envio
                  copy[i].mailbox[2].emails = newdataSended;
                break;
              }
@@ -82,7 +82,7 @@ const dataReducer = (state = initialState, action) => {
             ]
           };
           var newdataUser = action.data[action.id].mailbox[3].emails.concat(newSecondObject);  //Juntar los emails ENVIADOS
-          copy[action.id].mailbox[3].emails = newdataUser; //poner todos o email en una copia de los datos enENVIADOS
+          copy[action.id].mailbox[3].emails = newdataUser; //poner todos o email en una copia de los datos ENVIADOS
 
           state = {
             ...state,
@@ -113,7 +113,7 @@ const dataReducer = (state = initialState, action) => {
                       }
                       ]
                  };
-            newdataSended = action.data[action.id].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envi
+            newdataSended = action.data[action.id].mailbox[2].emails.concat(newObject);    //Juntar los emails recibidos del usuario al que se le envio
             copy[action.id].mailbox[2].emails = newdataSended;
 
             state = {
