@@ -54,7 +54,6 @@ constructor(props){
 
     var mailbox_id = this.state.mailbox_id;
     var email_id = this.state.email_id;
-    var option = this.state.option;
     var selected = '';
 
     var thisemails = this.props.emails.filter(function(content){
@@ -69,7 +68,6 @@ constructor(props){
         var the_email =  thisemails.emails.filter(function(content){
                return content.id === email_id;
         })[0];
-
          selected = <Email
                          selectedAs={(email, option)=>this.props.selectedAs(email, this.state.mailbox_id, option)}
                          email={the_email} Tag={the_email.tag}
@@ -78,6 +76,7 @@ constructor(props){
                          To={the_email.to}
                          Subject={the_email.subject}
                          Body={the_email.body}
+                         EmailType={mailbox_id}
                          />
     }//if
     else if(this.state.option === 1){

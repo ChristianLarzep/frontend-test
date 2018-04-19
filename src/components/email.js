@@ -2,7 +2,15 @@ import React from 'react';
 
 export class Email extends React.Component{
   render(){
-    var from = "<"+this.props.From+">";
+    var email = '';
+    var tag = '';
+    if(this.props.EmailType === 4){
+        tag = "To: "+this.props.Tag;
+        email = "<"+this.props.To+">";
+    }else{
+      tag = this.props.Tag;
+        email = "<"+this.props.From+">";
+    }
     return(
       <div className="emailContainer">
           <div className="subjectContainer">
@@ -15,8 +23,9 @@ export class Email extends React.Component{
                </div>
                <div className="email">
                <div className="emailHead">
-                    <div className="sender">{this.props.Tag}</div>
-                    <div className="from">{from}</div>
+                    <div className="sender">{tag}</div>
+                    <div className="from">{email}</div>
+
                     <div className="emailDate">{this.props.date}</div>
                </div>
                <div className="emailBody">
